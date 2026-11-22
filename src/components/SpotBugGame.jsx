@@ -44,7 +44,7 @@ export default function SpotBugGame() {
     setGameKey((current) => current + 1);
   };
 
-  return <>
+  return <div className="spot-bug-root">
     <a className="bug-launcher" href="#spot-the-bug" aria-label="Jump to Spot the Bug game"><Target size={15} /> Spot the Bug</a>
     <section className="spot-bug-section" id="spot-the-bug" aria-labelledby="spot-bug-title" key={gameKey}>
       <div className="spot-bug-shell">
@@ -69,5 +69,5 @@ export default function SpotBugGame() {
         </div> : <div className="spot-bug-result" aria-live="polite"><div className="result-icon"><Target size={28}/></div><p className="spot-bug-kicker">FINAL RESULT</p><h3>{score} <span>/ {spotBugRounds.length}</span></h3><p>{scoreMessages[score]}</p><div className="result-actions"><button className="spot-bug-next" onClick={restart}><RotateCcw size={16}/> Play again</button><a className="spot-bug-contact" href="#contact">Want a tester who finds the bugs before users do? Contact me <ArrowRight size={16}/></a></div></div>}
       </div>
     </section>
-  </>;
+  </div>;
 }
